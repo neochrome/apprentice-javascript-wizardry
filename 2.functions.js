@@ -1,5 +1,3 @@
-console.log('functions');
-
 // -------------------- declaring functions
 function someFunc(){
 	console.log('someFunc');
@@ -80,6 +78,3 @@ solution();
 	console.log(protectedByScope);
 })();
 console.log(protectedByScope);
-
-
-console.log('');

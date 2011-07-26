@@ -1,5 +1,3 @@
-console.log('');
-
 // -------------------- array
 var arr = [1,2,3];
 console.log('an array:', arr);
@@ -46,6 +44,3 @@ console.log(null, '=>', typeof null);
 console.log(undefined, '=>', typeof undefined);
 undefined = 'what are you talking about? i\'m not undefined!'; // <- please don't do this! :(
 console.log(undefined, '=>', typeof undefined);
-
-
-console.log('');

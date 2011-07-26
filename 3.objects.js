@@ -1,5 +1,3 @@
-console.log('');
-
 // -------------------- equvivalent: var AType = function(){...}
 function Person(name){			// <- constructor
 	this.name = name;
@@ -29,5 +27,18 @@ hobbes.Faint = function(){
 };
 hobbes.Faint();
 
-
-console.log('');
+// -------------------- self "yield"
+var Color = function(fn){
+	fn(this);
+};
+var red = new Color(function(me){
+	me.name = 'red';
+});
+console.log(red);
+var color = function(fn){
+	return new Color(fn);
+};
+var blue = color(function(me){
+	me.name = 'blue';
+});
+console.log(blue);
