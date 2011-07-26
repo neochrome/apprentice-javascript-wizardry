@@ -1,7 +1,6 @@
 console.log('');
 
-
-// equvivalent: var AType = function(){...}
+// -------------------- equvivalent: var AType = function(){...}
 function Person(name){			// <- constructor
 	this.name = name;
 	this.Praise = function(){ // <- object method
@@ -18,13 +17,13 @@ calvin.Praise();
 hobbes.Praise();
 
 
-// overriding existing method on object
+// -------------------- overriding existing method on object
 calvin.Praise = function(){
 	console.log('%s rulez more!', this.name);
 };
 calvin.Praise();
 
-// adding method to object
+// -------------------- adding method to object
 hobbes.Faint = function(){
 	console.log('%s faints.', this.name);
 };

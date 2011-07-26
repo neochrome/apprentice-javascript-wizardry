@@ -1,6 +1,6 @@
-console.log('');
+console.log('functions');
 
-
+// -------------------- declaring functions
 function someFunc(){
 	console.log('someFunc');
 }
@@ -13,11 +13,16 @@ var sameSomeFunc = function(){
 sameSomeFunc();
 
 
-var withNamedArgs = function(arg1, arg2){
+var evalSomeFunc = new Function('console.log(\'evalSomeFunc\');');
+evalSomeFunc();
+
+
+// -------------------- arguments
+var namedArgs = function(arg1, arg2){
 	console.log('arg1 => %s, arg2 => %s', arg1, arg2);
 };
-withNamedArgs('first', 'second');
-withNamedArgs('only first'); // <- args always optional
+namedArgs('first', 'second');
+namedArgs('only first'); // <- args always optional
 
 
 var anonArgs = function(){
@@ -28,6 +33,7 @@ anonArgs();
 anonArgs('arg1', 2, [1,2,3], {id:4});
 
 
+// -------------------- scoping
 var outer = function(){
 	var outer_i = 0;
 
@@ -39,11 +45,41 @@ var outer = function(){
 };
 outer();
 
-
+// -------------------- pitfall & solution
 var pitfall = function(){
-
+	var arr = [];
+	for(var i = 0; i < 3; i++){
+		arr.push(function(){
+			console.log('pitfall: %d', i);
+		});
+	}
+	for(var j = 0; j < arr.length; j++){
+		arr[j]();
+	}
 };
 pitfall();
+var solution = function(){
+	var arr = [];
+	for(var i = 0; i < 3; i++){
+		arr.push(function(x){
+			return function(){
+				console.log('solution: %d', x);
+			};
+		}(i));
+	}
+	for(var j = 0; j < arr.length; j++){
+		arr[j]();
+	}
+};
+solution();
+
+
+// --------------------- self executing
+(function(){
+	var protectedByScope = 'i am safe!';
+	console.log(protectedByScope);
+})();
+console.log(protectedByScope);
 
 
 console.log('');
