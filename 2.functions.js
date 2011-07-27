@@ -31,6 +31,13 @@ anonArgs();
 anonArgs('arg1', 2, [1,2,3], {id:4});
 
 
+// --------------------- callee
+var factorialOf4 = function(n){
+	if(n <= 1) { return 1; }
+	return n * arguments.callee(n-1);
+}(4);
+console.log(factorialOf4);
+
 // -------------------- scoping
 var outer = function(){
 	var outer_i = 0;
