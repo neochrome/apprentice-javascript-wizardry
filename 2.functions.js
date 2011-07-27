@@ -72,7 +72,7 @@ var solution = function(){
 solution();
 
 
-// --------------------- self executing
+// --------------------- pattern: self executing
 (function(){
 	var protectedByScope = 'i am safe!';
 	console.log(protectedByScope);

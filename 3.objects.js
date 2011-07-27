@@ -42,3 +42,19 @@ var blue = color(function(me){
 	me.name = 'blue';
 });
 console.log(blue);
+
+
+// --------------------- prototyping
+var Vehicle = function(license){
+	this.license = license;
+};
+Vehicle.prototype.drive = function(){
+	console.log('%s goes wrooooom!', this.license);
+};
+var Car = function(license){
+	this.constructor(license);
+};
+Car.prototype = new Vehicle();
+
+var aCar = new Car('abc123');
+aCar.drive();
