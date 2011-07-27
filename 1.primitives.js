@@ -44,3 +44,12 @@ console.log(null, '=>', typeof null);
 console.log(undefined, '=>', typeof undefined);
 undefined = 'what are you talking about? i\'m not undefined!'; // <- please don't do this! :(
 console.log(undefined, '=>', typeof undefined);
+
+// --------------------- comparison
+console.log('\'%s\' == %s => %s', '1', true, ('1' == true));
+console.log('%s == %s => %s', 1, true, (1 == true));
+console.log('\'%s\' == %s => %s', '42', 42, ('42' == 42));
+console.log('\'%s\' === %s => %s', '1', true, ('1' === true));
+console.log('%s === %s => %s', 1, true, (1 === true));
+console.log('\'%s\' === %s => %s', '42', 42, ('42' === 42));
+console.log('%s === %s => %s', 13, 13, (13 === 13));
