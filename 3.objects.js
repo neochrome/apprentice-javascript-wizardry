@@ -1,4 +1,4 @@
-// -------------------- equvivalent: var AType = function(){...}
+// -------------------- equivalent: var AType = function(){...}
 function Person(name){			// <- constructor
 	this.name = name;
 	this.Praise = function(){ // <- object method
